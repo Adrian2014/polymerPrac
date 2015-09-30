@@ -1,0 +1,116 @@
+
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!--
+This is a re-usable header element
+-->
+<dom-module id="header-element">
+
+  <style>
+    #headerOuter img {
+      float: left;
+      margin: 5px 5px 5px 5px;
+      max-height: 100px;
+      max-width: 100%;
+      float:left;
+      position: absolute;
+      display: inline-block;
+    }
+
+    #headerOuter {
+      position: fixed;
+      border-style: outset;
+      border-radius: 1px;
+      height: 110px;
+      width: 100%;
+      background-color: #8d8eb7;
+    }
+  
+    #headerTitle {
+      margin-left: 150px;
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 5px;
+    }
+
+    h2.style-scope.header-element{
+      margin-bottom: 5px;
+    }
+    
+    #headerExplination{
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    p.style-scope.header-element{
+      margin-top: 5px;
+    }
+
+  </style>
+
+  <template>
+    <div id="headerOuter">
+      <img src="{{header.image}}">
+      <div id="headerTitle">
+        <h2>{{header.title}}</h2>
+        <div id="headerExplination">
+          <p>{{header.explination}}<p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'header-element',
+
+    properties: {
+      header: {
+        type: Object,
+        value: function() {
+          return {
+            title:  'Welcome',
+            explination: 'this is a simple header element',
+            image: 'https://worldvectorlogo.com/logos/polymer-2.svg',
+          };
+        }
+      },
+
+    },
+
+    // Element Lifecycle
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    },
+
+    // Element Behavior
+    basic: function(arguements) {
+      
+    },
+
+  });
+
+</script>

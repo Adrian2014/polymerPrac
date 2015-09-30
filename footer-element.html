@@ -1,0 +1,115 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!--
+This is a re-usable footer element
+-->
+<dom-module id="footer-element">
+
+  <style>
+    #footerOuter img {
+      float: left;
+      margin: 5px 5px 5px 5px;
+      max-height: 100px;
+      max-width: 100%;
+      display: inline-block;
+    }
+
+    #footerOuter {
+      border-style: outset;
+      border-radius: 1px;
+      height: 110px;
+      width: 100%;
+      background-color: #8d8eb7;
+      margin: 15px 0px 0px 0px;
+      position: fixed;
+      bottom: 0;
+    }
+  
+    #footerTitle {
+      margin-left: 50px;
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 5px;
+    }
+
+    h2.style-scope.footer-element{
+      margin-bottom: 5px;
+    }
+    
+    #footerExplination{
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    p.style-scope.footer-element{
+      margin-top: 5px;
+    }
+
+  </style>
+
+  <template>
+    <div id="footerOuter">
+      <img src="{{footer.image}}">
+      <div id="footerTitle">
+        <h2>{{footer.title}}</h2>
+        <div id="footerExplination">
+          <p>{{footer.author}}<p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'footer-element',
+
+    properties: {
+      footer: {
+        type: Object,
+        value: function() {
+          return {
+            title:  'Created By',
+            author: 'Adrian Tawadros',
+            image: 'https://plus.google.com/u/0/_/focus/photos/private/AIbEiAIAAABECNik1-Ois5zXxwEiC3ZjYXJkX3Bob3RvKigzMTNjNDBiZDYzNjZiZGE0ZThiNzQ2NWUxYWEwOTg5YWQzOGIxMTllMAEvivioUYXTSuPY-1ruzmDVPgVcaA?sz=96',
+          };
+        }
+      },
+
+    },
+
+    // Element Lifecycle
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    },
+
+    // Element Behavior
+    basic: function(arguements) {
+      
+    },
+
+  });
+
+</script>

@@ -1,0 +1,93 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!--
+This is a re-usable sidebar element
+-->
+<dom-module id="sidebar-element">
+
+  <style>
+    #sidebarOuter {
+      background-color: #8d8eb7;
+      margin-top: 5px;
+      position: fixed;
+      width: 100px;
+      height: 100%;
+      border-left: outset;
+      border-right: outset;
+      border-radius: 1px;
+    }
+    
+    ol#sidebarOption.style-scope.sidebar-element{
+      padding-left: 2px;
+    }
+ 
+    #sidebarOption{
+     border-bottom: solid white;
+     border-radius: .5px;
+    }
+
+  </style>
+
+  <template>
+    <div id="sidebarOuter">
+      <ol id="sidebarOption">Page 1</ol>
+      <ol id="sidebarOption">Page 2</ol>
+      <ol id="sidebarOption">Page 3</ol>
+      <ol id="sidebarOption">Page 4</ol>
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'sidebar-element',
+
+    properties: {
+      sidebar: {
+        type: Object,
+        value: function() {
+          return {
+            title:  'Created By',
+            author: 'Adrian Tawadros',
+            image: 'https://plus.google.com/u/0/_/focus/photos/private/AIbEiAIAAABECNik1-Ois5zXxwEiC3ZjYXJkX3Bob3RvKigzMTNjNDBiZDYzNjZiZGE0ZThiNzQ2NWUxYWEwOTg5YWQzOGIxMTllMAEvivioUYXTSuPY-1ruzmDVPgVcaA?sz=96',
+          };
+        }
+      },
+
+    },
+
+    // Element Lifecycle
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    },
+
+    // Element Behavior
+    basic: function(arguements) {
+      
+    },
+
+  });
+
+</script>
