@@ -1,0 +1,64 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="bower_components/iron-icons/av-icons.html">
+
+<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+
+
+<!--
+This is a re-usable sidebar element
+-->
+<dom-module id="pages-carousel">
+
+  <style>
+  	.carouselSection{
+  		height: 100px;
+  		border:solid white 2px;
+  	}
+  </style>
+
+  <template>
+  	
+	  	<iron-pages id="pages" selected="{{selected}}" attr-for-selected="section-data">
+	  		<section section-data="First Section" class="carouselSection">This is the first carousel slide</section>
+	  		<section section-data="Second Section" class="carouselSection">This is the second carousel slide</section>
+	  		<section section-data="Third Section" class="carouselSection">This is the third carousel slide</section>
+	  	</iron-pages>
+
+	  	<div class="controls layout horizontal justified center border">
+	  		<div><paper-button on-tap="_goPrev"><iron-icon icon="av:fast-rewind"></iron-icon></papaer-button></div>
+	  		<div><input type="text" value="{{selected::input}}"></div>  <!-- this means that the 'selected' is being fired when the input cahanges ** this is teaching polymer that a change event occured on the input ** combining tow native HTML elements -->
+	  		<div><paper-button on-tap="_goNext"><iron-icon  icon="av:fast-forward"></iron-icon></paper-button></div>
+	  	</div>
+
+     </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+    is: 'pages-carousel',
+    properties: {
+    	selected:{
+    		type: String,
+    		value: 'First Section'
+    	}
+    },
+
+    _goPrev: function(){
+    	this.$.pages.selectPrevious();
+    },
+    _goNext: function(){
+    	this.$.pages.selectNext();
+    },
+
+    
+  });
+
+</script>

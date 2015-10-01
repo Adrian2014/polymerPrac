@@ -1,0 +1,112 @@
+
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<!--
+This is a re-usable header toolbar element
+-->
+<dom-module id="toolbar-element">
+
+<style>
+	  .toolbar{
+		  background-color: #8d8eb7;
+		  color:white;
+		  border-style: outset;
+      border-radius: 1px;
+      width:100%;
+      top:0;
+      left:0;
+      position: fixed;
+      height: 90px;
+		}
+	 #headerImg{
+      max-height: 25px;
+      max-width: 100%;
+    } 
+    .container {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+    }
+    .flexchild {
+      @apply(--layout-flex);
+    }
+    .flex2child {
+      @apply(--layout-flex-2);
+    }
+    .flex3child {
+      @apply(--layout-flex-3);
+    }
+    
+
+  </style>
+
+
+  <template>
+  		<div class="container toolbar">
+
+			  <div><paper-button><iron-icon icon="menu"></iron-icon></paper-button></div>
+			  <div><img id="headerImg" src="{{header.image}}"></div>
+			  <div><h2>{{header.title}}</h2></div>
+			  <span class="flexchild"></span>
+			  <div><paper-button><iron-icon icon="search"></iron-icon></paper-button></div>
+
+			</div> 
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'toolbar-element',
+
+    properties: {
+      header: {
+        type: Object,
+        value: function() {
+          return {
+            title:  'Welcome',
+            explination: 'this is a simple header element',
+            image: 'https://worldvectorlogo.com/logos/polymer-2.svg',
+          };
+        }
+      },
+
+    },
+
+    // Element Lifecycle
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    },
+
+    // Element Behavior
+    basic: function(arguements) {
+      
+    },
+
+  });
+</script>

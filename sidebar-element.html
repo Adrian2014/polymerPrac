@@ -1,5 +1,9 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
 <!--
 This is a re-usable sidebar element
 -->
@@ -15,26 +19,32 @@ This is a re-usable sidebar element
       border-left: outset;
       border-right: outset;
       border-radius: 1px;
+      left:0;
+      border-top:solid white .5px;
     }
     
     ol#sidebarOption.style-scope.sidebar-element{
       padding-left: 2px;
+
     }
  
     #sidebarOption{
      border-bottom: solid white;
      border-radius: .5px;
+     font-size: 8px;
     }
 
   </style>
 
   <template>
+    
     <div id="sidebarOuter">
-      <ol id="sidebarOption">Page 1</ol>
-      <ol id="sidebarOption">Page 2</ol>
-      <ol id="sidebarOption">Page 3</ol>
-      <ol id="sidebarOption">Page 4</ol>
+      <ol id="sidebarOption"><paper-button><iron-icon icon="account-circle"></iron-icon>Account</paper-button></ol>
+      <ol id="sidebarOption"><paper-button><iron-icon icon="assignment"></iron-icon> Assignments</paper-button></ol>
+      <ol id="sidebarOption"><paper-button><iron-icon icon="assessment"></iron-icon> Analytics</paper-button></ol>
+      <ol id="sidebarOption"><paper-button><iron-icon icon="bug-report"></iron-icon> Bug Report</paper-button></ol>
     </div>
+
   </template>
 
 </dom-module>

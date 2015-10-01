@@ -1,0 +1,17 @@
+body {
+ background-color: #4f54ea;
+}
+#afterHeader{
+	padding-top: 82px; /*offset the header element*/
+}
+#sidebarWrapper{
+	padding-left: 150px; /*offset the sidebar element*/
+}
+#afterFooter{
+	padding-bottom: 50px; /*offset the footer element*/
+}
+
+.border{
+  border:solid white 2px;
+}
+

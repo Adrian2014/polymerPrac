@@ -15,6 +15,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script type="text/javascript" src="bower_components/page.js/page.js"></script>
+  <link rel="stylesheet" href="app.css">
+  <link rel="import" href="pages-carousel.html">
+  <link rel="import" href="toolbar-element.html">
   <link rel="import" href="header-element.html">
   <link rel="import" href="sidebar-element.html">
   <link rel="import" href="seed-element.html">
@@ -22,41 +26,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="footer-element.html">
 
 </head>
-<body>
-	<style>
-    body {
-     background-color: #4f54ea;
-    }
-    #afterHeader{
-    	padding-top: 110px; /*offset the header element*/
-    }
-    #sidebarWrapper{
-    	padding-left: 150px; /*offset the sidebar element*/
-    }
-    #afterFooter{
-    	padding-bottom: 50px; /*offset the header element*/
-    }
-
-
-
-  </style>
+<body bleedthrough>
   <!-- Note: if the main element for this repository doesn't
        match the folder name, add a src="&lt;main-component&gt;.html" attribute,
        where &lt;main-component&gt;.html" is a file that imports all of the
        components you want documented. -->
   <!-- <iron-component-page></iron-component-page> -->
-  <header-element></header-element>
-  <div id="afterHeader"></div>
+
+  <!-- <header-element></header-element> -->
+ <div id="afterHeader"></div> <!-- /*offset the header element*/ -->
+ <toolbar-element></toolbar-element>
+
+
+
   <sidebar-element></sidebar-element>
-  <div id="sidebarWrapper">
+  <div id="sidebarWrapper"> <!-- /*offset the sidebar element*/ -->
 	  </br>
 	  <h3>First attempt at creating Polymer Elements</h3>
+    
+    <pages-carousel></pages-carousel>
+    
+
 	  </br>
 	  <two-way-binding-el></two-way-binding-el>
 	  </br>
 	</div> 
   <!-- <seed-element></seed-element> -->
-  <div id="afterFooter"></div>
+  <!-- <div id="afterFooter"></div> --> <!-- /*offset the footer element*/ -->
   <footer-element></footer-element>
   
 </body>
